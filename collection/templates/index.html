@@ -1,12 +1,16 @@
-{% load staticfiles %}
-<!doctype html>
-<html>
-    <head>
-        <title>Web App Project</title>
-        <link rel="stylesheet" href="{% static 'css/style.css' %}" />
-    </head>
-    <body>
-        <h1>Inicial</h1>
-        <p>Basico.</p>
-    </body>
-</html>
+{% extends 'base.html' %}
+{% load humanize %}
+{% block title %}
+    p&aacute;gina inicial - {{ block.super }}
+{% endblock title %}
+
+{% block content %}
+    <h1>ooool&aacute;</h1>
+    <p>Info. b&aacute;sica</p>
+    <p>valor enviado pela view = '{{ number }}'</p>
+    <p>{% if number %}par&acirc;metro recebido!{% endif %}</p>
+    <p>Existem {{ number }} cachorro{{ number|pluralize:"s" }}!</p>
+    <p>Existem {{ number|apnumber }} cachorros!</p>
+    <p>Isso &eacute; minha {{ coisa|slugify }}</p>
+    <p>Isso &eacute; minha {{ coisa|title }}</p>
+{% endblock content %}
