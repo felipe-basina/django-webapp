@@ -12,3 +12,9 @@ def index(request):
     #things = Thing.objects.filter(name__contains="Hello")
     
     return render(request, 'index.html', { 'things': things, })
+    
+def thing_detail(request, slug):
+    # Recuperar o objeto
+    thing = Thing.objects.get(slug=slug)
+    
+    return render(request, 'things/thing_detail.html', { 'thing': thing, })
