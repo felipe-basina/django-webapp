@@ -5,6 +5,11 @@
 {% endblock title %}
 
 {% block content %}
+    {% for thing in things %}
+    <h2>{{ thing.name }}</h2>
+    <p>{{ thing.description }}</p>
+    {% endfor %}
+<!--
     <h1>ooool&aacute;</h1>
     <p>Info. b&aacute;sica</p>
     <p>valor enviado pela view = '{{ number }}'</p>
@@ -13,4 +18,5 @@
     <p>Existem {{ number|apnumber }} cachorros!</p>
     <p>Isso &eacute; minha {{ coisa|slugify }}</p>
     <p>Isso &eacute; minha {{ coisa|title }}</p>
+-->
 {% endblock content %}
